@@ -77,7 +77,7 @@ class ALCScrub:
         # Path should point to resources - and ALC folders with Layout#.xml and Platform#.xml files
         # as well as Info.plist files
         changes = ""
-        for folder in os.listdir(path):
+        for folder in sorted(os.listdir(path)):
             fp = os.path.join(path, folder)
             if not os.path.isdir(fp):
                 continue
