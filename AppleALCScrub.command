@@ -37,10 +37,11 @@ class ALCScrub:
         val.sort()
         layouts.sort()
         outs = {}
+        # Remove all valid layouts before walking
         for layout in layouts:
             if layout in val:
                 val.remove(layout)
-                continue
+        for layout in layouts:
             if not len(val):
                 # Out of valids
                 break
