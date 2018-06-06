@@ -36,12 +36,12 @@ class ALCScrub:
         val = self.get_hda_resources()
         val.sort()
         layouts.sort()
+        exclude = [x for x in layouts if x in val]
         outs = {}
         # Remove all valid layouts before walking
         for layout in layouts:
-            if layout in val:
-                val.remove(layout)
-        for layout in layouts:
+            if layout in exclude:
+                continue
             if not len(val):
                 # Out of valids
                 break
